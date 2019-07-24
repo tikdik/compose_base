@@ -1,0 +1,17 @@
+version: '2.2'
+services:
+  es:
+    image: elasticsearch:7.2.0
+    container_name: es
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./data:/usr/share/elasticsearch/data
+      - ./plugins:/usr/share/elasticsearch/plugins
+    ports:
+      - 9200:9200
