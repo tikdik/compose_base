@@ -28,3 +28,5 @@ datadir         = /var/lib/mysql
 #bind-address   = 127.0.0.1
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
+character-set-server=utf8
+default-time-zone='+8:00'
