@@ -1,0 +1,14 @@
+version: '2.2'
+services:
+  redis:
+    image: redis:5.0.5
+    container_name: redis
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./data:/data
+    command: redis-server --appendonly yes
+    ports:
+      - 6379:6379
